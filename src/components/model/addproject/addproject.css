@@ -1,0 +1,231 @@
+.create-project-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 21, 31, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.create-project-card {
+  background: #ffffff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.create-project-content {
+  padding: 24px 28px 28px;
+}
+
+.header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.breadcrumb-link {
+  color: #e0507a;
+}
+
+.breadcrumb svg {
+  color: #a3a7b8;
+}
+
+.breadcrumb-current {
+  color: #5b4dee;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #9a9eb0;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.close-btn:hover {
+  background: #f0f1f6;
+  color: #4a4f63;
+}
+
+.create-project-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #14151f;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.create-project-content .subtitle {
+  color: #8b8fa3;
+  font-size: 13.5px;
+  margin: 0 0 22px 0;
+}
+
+/* ---------------------------------------------------
+   Form
+--------------------------------------------------- */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5b4dee;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #e2e5f0;
+  border-radius: 9px;
+  font-size: 13.5px;
+  color: #1a1c25;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234a4f63' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.form-group input::placeholder {
+  color: #b3b6c4;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #7c6bf0;
+  box-shadow: 0 0 0 3px rgba(124, 107, 240, 0.12);
+}
+
+/* Domain input with https:// prefix */
+.domain-input-group {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #e2e5f0;
+  border-radius: 9px;
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.domain-input-group:focus-within {
+  border-color: #7c6bf0;
+  box-shadow: 0 0 0 3px rgba(124, 107, 240, 0.12);
+}
+
+.domain-prefix {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: #f4f5fa;
+  border-right: 1px solid #e2e5f0;
+  color: #7a7f92;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.domain-input-group input {
+  border: none;
+  border-radius: 0;
+  flex: 1;
+}
+
+.domain-input-group input:focus {
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------
+   Actions
+--------------------------------------------------- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid #eef0f6;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-cancel {
+  background: #ffffff;
+  border: 1px solid #e2e5f0;
+  color: #4a4f63;
+}
+
+.btn-cancel:hover {
+  background: #f4f5fa;
+}
+
+.btn-create {
+  background: #5b4dee;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(91, 77, 238, 0.25);
+}
+
+.btn-create:hover {
+  background: #4c3fe0;
+}
+
+@media (max-width: 520px) {
+  .create-project-card {
+    max-width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

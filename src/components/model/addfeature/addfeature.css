@@ -1,0 +1,229 @@
+.edit-feat-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 21, 31, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.edit-feat-page {
+  position: relative;
+  background: #f7f8fb;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px 28px 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.edit-feat-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #9a9eb0;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.edit-feat-close-btn:hover {
+  background: #e7e9f2;
+  color: #4a4f63;
+}
+
+/* ---------------------------------------------------
+   Header: breadcrumb left, heading right
+--------------------------------------------------- */
+.edit-feat-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.edit-feat-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-feat-breadcrumb-box {
+  border: 1px solid #c9c3f7;
+  color: #5b4dee;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.edit-feat-breadcrumb-current {
+  color: #5b4dee;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.edit-feat-header-right {
+  text-align: right;
+}
+
+.edit-feat-header-right h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #14151f;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+.edit-feat-header-right .subtitle {
+  color: #4a4f63;
+  font-size: 13px;
+  margin: 0;
+  max-width: 220px;
+  margin-left: auto;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------
+   Form card
+--------------------------------------------------- */
+.edit-feat-card {
+  background: #ffffff;
+  border: 1px solid #e7e9f2;
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 1px 2px rgba(20, 20, 40, 0.03);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #5b4dee;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #e2e5f0;
+  border-radius: 9px;
+  font-size: 13.5px;
+  color: #1a1c25;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.5;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b3b6c4;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #7c6bf0;
+  box-shadow: 0 0 0 3px rgba(124, 107, 240, 0.12);
+}
+
+/* ---------------------------------------------------
+   Actions
+--------------------------------------------------- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 20px;
+  border-top: 1px solid #eef0f6;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-cancel {
+  background: #ffffff;
+  border: 1px solid #e2e5f0;
+  color: #4a4f63;
+}
+
+.btn-cancel:hover {
+  background: #f4f5fa;
+}
+
+.btn-update {
+  background: #5b4dee;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(91, 77, 238, 0.25);
+}
+
+.btn-update:hover {
+  background: #4c3fe0;
+}
+
+/* ---------------------------------------------------
+   Responsive
+--------------------------------------------------- */
+@media (max-width: 600px) {
+  .edit-feat-header-row {
+    flex-direction: column;
+  }
+
+  .edit-feat-header-right {
+    text-align: left;
+  }
+
+  .edit-feat-header-right .subtitle {
+    margin-left: 0;
+    max-width: none;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

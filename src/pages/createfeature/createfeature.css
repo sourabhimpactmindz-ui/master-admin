@@ -1,0 +1,304 @@
+.feat-content {
+  padding: 32px 28px;
+  flex: 1;
+  background: #f7f8fb;
+}
+
+/* ---------------------------------------------------
+   Header
+--------------------------------------------------- */
+.feat-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.feat-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #14151f;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.feat-header .subtitle {
+  color: #8b8fa3;
+  font-size: 14px;
+  margin: 0;
+}
+
+.feat-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.feat-btn-primary {
+  background: #5b4dee;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(91, 77, 238, 0.25);
+}
+
+.feat-btn-primary:hover {
+  background: #4c3fe0;
+}
+
+/* ---------------------------------------------------
+   Card wrapper
+--------------------------------------------------- */
+.feat-card {
+  background: #ffffff;
+  border: 1px solid #e7e9f2;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------
+   Table
+--------------------------------------------------- */
+.feat-table-wrapper {
+  overflow-x: auto;
+}
+
+.feat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.feat-table thead th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #9a9eb0;
+  padding: 14px 24px;
+  background: #fafbfd;
+  border-bottom: 1px solid #e7e9f2;
+  white-space: nowrap;
+}
+
+.feat-table tbody td {
+  padding: 16px 24px;
+  font-size: 13.5px;
+  color: #1a1c25;
+  border-bottom: 1px solid #f0f1f6;
+  vertical-align: top;
+}
+
+.feat-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.feat-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.text-muted {
+  color: #7a7f92;
+}
+
+.feature-description {
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.feat-empty-row {
+  text-align: center;
+  padding: 30px !important;
+  color: #9a9eb0;
+}
+
+/* Feature name cell with icon */
+.feature-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eceafe;
+  color: #5b4dee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Status badge */
+.feat-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.feat-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.feat-status-active {
+  background: #e9f9ee;
+  color: #16a34a;
+}
+
+.feat-status-active .feat-status-dot {
+  background: #16a34a;
+}
+
+.feat-status-inactive {
+  background: #eef0f4;
+  color: #7a7f92;
+}
+
+.feat-status-inactive .feat-status-dot {
+  background: #9a9eb0;
+}
+
+/* Actions */
+.feat-actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feat-toggle-switch {
+  position: relative;
+  width: 38px;
+  height: 21px;
+  border-radius: 999px;
+  border: none;
+  background: #d8dae5;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.feat-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.feat-toggle-switch.feat-toggle-on {
+  background: #16a34a;
+}
+
+.feat-toggle-switch.feat-toggle-on .feat-toggle-thumb {
+  transform: translateX(17px);
+}
+
+.feat-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #9a9eb0;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.feat-icon-btn:hover {
+  background: #f0f1f6;
+  color: #4a4f63;
+}
+
+/* ---------------------------------------------------
+   Footer
+--------------------------------------------------- */
+.feat-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-top: 1px solid #e7e9f2;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.feat-results-count {
+  font-size: 13px;
+  color: #e0507a;
+  font-weight: 500;
+}
+
+.feat-pager {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feat-pager-btn {
+  padding: 7px 14px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #4a4f63;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.feat-pager-btn:hover:not(:disabled) {
+  background: #f0f1f6;
+}
+
+.feat-pager-btn:disabled {
+  color: #c7c9d6;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------
+   Responsive
+--------------------------------------------------- */
+@media (max-width: 720px) {
+  .feat-content {
+    padding: 20px 16px;
+  }
+
+  .feat-table {
+    min-width: 700px;
+  }
+} 
+
+.delete-btn {
+  color: #ef4444;
+}
+
+.delete-btn:hover {
+  color: #dc2626;
+  background-color: #fee2e2;
+}

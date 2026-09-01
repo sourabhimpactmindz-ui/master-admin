@@ -1,0 +1,377 @@
+.clients-content {
+  padding: 32px 28px;
+  flex: 1;
+  background: #f7f8fb;
+}
+
+.clients-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #14151f;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.clients-header .subtitle {
+  color: #8b8fa3;
+  font-size: 14px;
+  margin: 0 0 22px 0;
+}
+
+/* ---------------------------------------------------
+   Toolbar: search + filters + add client
+--------------------------------------------------- */
+.clients-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+  max-width: 420px;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a3a7b8;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  border: 1px solid #e2e5f0;
+  border-radius: 9px;
+  font-size: 13.5px;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-box input:focus {
+  border-color: #7c6bf0;
+  box-shadow: 0 0 0 3px rgba(124, 107, 240, 0.12);
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-outline {
+  background: #ffffff;
+  border: 1px solid #e2e5f0;
+  color: #4a4f63;
+}
+
+.btn-outline:hover {
+  background: #f4f5fa;
+}
+
+.btn-primary {
+  background: #5b4dee;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(91, 77, 238, 0.25);
+}
+
+.btn-primary:hover {
+  background: #4c3fe0;
+}
+
+/* ---------------------------------------------------
+   Table
+--------------------------------------------------- */
+.clients-table-wrapper {
+  background: #ffffff;
+  border: 1px solid #e7e9f2;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.clients-table thead th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #9a9eb0;
+  padding: 14px 20px;
+  background: #fafbfd;
+  border-bottom: 1px solid #e7e9f2;
+}
+
+.clients-table tbody td {
+  padding: 14px 20px;
+  font-size: 13.5px;
+  color: #1a1c25;
+  border-bottom: 1px solid #f0f1f6;
+}
+
+.clients-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.clients-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.text-muted {
+  color: #7a7f92;
+}
+
+.empty-row {
+  text-align: center;
+  padding: 30px !important;
+  color: #9a9eb0;
+}
+
+/* Client name cell with avatar */
+.client-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #5b4dee;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Client ID badge */
+.client-id-badge {
+  display: inline-block;
+  background: #eef0fb;
+  color: #5b4dee;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-active {
+  background: #e9f9ee;
+  color: #16a34a;
+}
+
+.status-active .status-dot {
+  background: #16a34a;
+}
+
+.status-inactive {
+  background: #eef0f4;
+  color: #7a7f92;
+}
+
+.status-inactive .status-dot {
+  background: #9a9eb0;
+}
+
+/* Actions */
+.actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Toggle switch for active/inactive status */
+.toggle-switch {
+  position: relative;
+  width: 38px;
+  height: 21px;
+  border-radius: 999px;
+  border: none;
+  background: #d8dae5;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.toggle-switch:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.toggle-switch.toggle-on {
+  background: #16a34a;
+}
+
+.toggle-switch.toggle-on .toggle-thumb {
+  transform: translateX(17px);
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #9a9eb0;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.action-btn:hover {
+  background: #f0f1f6;
+  color: #4a4f63;
+}
+
+/* ---------------------------------------------------
+   Footer: results count + pagination
+--------------------------------------------------- */
+.clients-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.results-count {
+  font-size: 13px;
+  color: #5b4dee;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-btn {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #4a4f63;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #f0f1f6;
+}
+
+.page-btn:disabled {
+  color: #c7c9d6;
+  cursor: not-allowed;
+}
+
+.page-btn-active {
+  background: #5b4dee;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.page-btn-active:hover {
+  background: #5b4dee;
+}
+
+.end-of-list {
+  text-align: center;
+  color: #e17ba5;
+  font-size: 12.5px;
+  margin-top: 26px;
+}
+
+.delete-btn {
+  color: #ef4444;
+}
+
+.delete-btn:hover {
+  color: #dc2626;
+  background-color: #fee2e2;
+}
+
+/* ---------------------------------------------------
+   Responsive
+--------------------------------------------------- */
+@media (max-width: 720px) {
+  .clients-content {
+    padding: 20px 16px;
+  }
+
+  .clients-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .clients-table {
+    min-width: 700px;
+  }
+}

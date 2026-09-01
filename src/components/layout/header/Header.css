@@ -1,0 +1,26 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 16px 28px;
+  border-bottom: 1px solid #e7e9f2;
+  background: #ffffff;
+}
+
+.topbar h2 {
+  color: #5b4dee;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.topbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #4a4f63;
+}
+
+.topbar-icons svg {
+  cursor: pointer;
+}
