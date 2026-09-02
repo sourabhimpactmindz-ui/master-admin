@@ -116,6 +116,7 @@ const deleteProjects = async(projectId) => {
                 <th>Project Name</th>
                 <th>Client</th>
                 <th>Domain</th>
+                <th>Project_id</th>
                 <th>API Key</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -136,6 +137,9 @@ const deleteProjects = async(projectId) => {
                   <td className="project-name-cell">{project.name}</td>
                   <td className="text-muted">{project.clientId?.name }</td>
                   <td className="text-muted">{project.domain}</td>
+                  <td className="text-muted">  <span className="client-id-badge">
+            {project._id}
+          </span></td>
               <td>
   <div className="api-key-cell">
 
