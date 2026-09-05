@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Plus, Pencil, Zap, Trash2 } from "lucide-react";
+import { Plus, Pencil, Zap, Trash2, ChevronLeft, ChevronRight } from "lucide-react";
 import "./createfeature.css";
 import { useGetFeatureQuery, useFeatureStatusMutation , useFeatureDeleteMutation } from "@/api/featureApi";
 import { getFeatureIcon } from "@/utils/featureIcon";
@@ -19,7 +19,7 @@ export default function Features() {
     const [selectedFeature , setSelectedFeature] = useState(null);
 
    const features = response?.data || [];
-    const pagination = response.pagination || {page : 1 , limit , total : 0, totalPages : 1}
+    const pagination = response?.pagination || { page: 1, limit, total: 0, totalPages: 1 };
     const handleToggleStatus = async (feature) => {
 
         const newStatus = feature.status === "active" ? "inactive" : "active";
