@@ -41,7 +41,7 @@ export const DashApi = baseApi.injectEndpoints({
         }),
 
         gelClient : builder.query({
-            query : ({page = 1 , limit = 6}) => ({
+            query : ({page = 1 , limit = 6} = {}) => ({
                 url : "/client/all",
                 method : "GET",
                 params : {page , limit}
