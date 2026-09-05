@@ -359,6 +359,96 @@
   background-color: #fee2e2;
 }
 
+
+/* ---------------------------------------------------
+   Footer
+--------------------------------------------------- */
+.feat-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-top: 1px solid #e7e9f2;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.feat-results-count {
+  font-size: 13px;
+  color: #e0507a;
+  font-weight: 500;
+}
+
+.feat-pager {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feat-pager-btn {
+  padding: 7px 14px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #4a4f63;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.feat-pager-btn:hover:not(:disabled) {
+  background: #f0f1f6;
+}
+
+.feat-pager-btn:disabled {
+  color: #c7c9d6;
+  cursor: not-allowed;
+}
+
+.feat-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid #eef0f4;
+    margin-top: 4px;
+}
+
+.feat-pagination span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #4b5563;
+    min-width: 90px;
+    text-align: center;
+}
+
+.feat-pagination .feat-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #4b5563;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.feat-pagination .feat-icon-btn:hover:not(:disabled) {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    color: #1f2937;
+}
+
+.feat-pagination .feat-icon-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
 /* ---------------------------------------------------
    Responsive
 --------------------------------------------------- */

@@ -6,6 +6,8 @@ import { toast } from "sonner";
 import AddClient from "@/components/model/addclient/addclient";
 
 export default function Clients() {
+  const [page , setPage] = useState(1);
+  const limit = 6
   const [clients, setClients] = useState([]);
   const [search, setSearch] = useState("");
   const {data : response , isLoading} = useGelClientQuery()
@@ -61,11 +63,16 @@ const handleToggleStatus = async (client) => {
   setClients(data);
 }, [response, isLoading]);
 
+const pagination = response.data || {page : 1 , limit , total : 0 , totalPages : 1};
+
   const deleteclient = async(clientId) => {
     try{
        await deleteClient(clientId).unwrap();
        
        toast.success("Client deleted successfully")
+       if(Clients.length === 1 && page > 1){
+        setPage((p) => p - 1);
+             }
     }catch(err){
       console.log(err)
       toast.error("something went wrong")
@@ -200,22 +207,36 @@ const handleToggleStatus = async (client) => {
 </table>
       </div>
 
-      <div className="clients-footer">
-        <span className="results-count">
-          Showing {filteredClients.length === 0 ? 0 : 1} to {filteredClients.length} of{" "}
-          {filteredClients.length} results
-        </span>
+      
+                {pagination.totalPages > 1 && (
 
-        <div className="pagination">
-          <button className="page-btn" disabled>
-            ‹
-          </button>
-          <button className="page-btn page-btn-active">1</button>
-          <button className="page-btn" disabled>
-            ›
-          </button>
-        </div>
-      </div>
+                    <div className="feat-pagination">
+
+                        <button
+                            className="feat-icon-btn"
+                            onClick={() => setPage((p) => Math.max(p - 1, 1))}
+                            disabled={page <= 1}
+                        >
+                            <ChevronLeft size={16} />
+                        </button>
+
+                        <span>
+                            Page {pagination.page} of {pagination.totalPages}
+                        </span>
+
+                        <button
+                            className="feat-icon-btn"
+                            onClick={() =>
+                                setPage((p) => Math.min(p + 1, pagination.totalPages))
+                            }
+                            disabled={page >= pagination.totalPages}
+                        >
+                            <ChevronRight size={16} />
+                        </button>
+
+                    </div>
+
+                )}
       {show && (
         <AddClient
         onClose={() =>  setshow(false)} />
