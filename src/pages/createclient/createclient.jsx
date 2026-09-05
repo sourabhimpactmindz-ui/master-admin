@@ -10,7 +10,7 @@ export default function Clients() {
   const limit = 6
   const [clients, setClients] = useState([]);
   const [search, setSearch] = useState("");
-  const {data : response , isLoading} = useGelClientQuery()
+  const {data : response , isLoading} = useGelClientQuery({page , limit})
   const [deleteClient] = useDeleteClientMutation()
   const [updateClient] = useUpdateClientMutation()
   const [show , setshow] = useState(false)
@@ -55,15 +55,19 @@ const handleToggleStatus = async (client) => {
       c.clientId.toLowerCase().includes(search.toLowerCase())
   );
 
- useEffect(() => {
-  if (isLoading) return;
+  useEffect(() => {
+    if (isLoading) return;
 
-  const data = response?.data || [];
+    const data = response?.data || [];
 
-  setClients(data);
-}, [response, isLoading]);
+    setClients(data);
+  }, [response, isLoading]);
 
-const pagination = response.data || {page : 1 , limit , total : 0 , totalPages : 1};
+  // Reset to page 1 whenever the search term changes
+  useEffect(() => {
+    setPage(1);
+  }, [search]);
+const pagination = response?.pagination || { page: 1, limit, total: 0, totalPages: 1 };
 
   const deleteclient = async(clientId) => {
     try{
