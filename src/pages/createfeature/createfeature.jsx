@@ -8,8 +8,10 @@ import EditFeatureModal from "@/components/model/editfeature/editfeature";
 import AddFeatureModal from "@/components/model/addfeature/addfeature";
 export default function Features() {
     // const [featur, setFeatures] = useState([]);
+    const [page , setPage] = useState(1);
+    const limit = 6 
 
-    const { data: response, isLoading } = useGetFeatureQuery();
+    const { data: response, isLoading } = useGetFeatureQuery({page , limit});
     const [featureStatus] = useFeatureStatusMutation();
     const [FeatureDelete] = useFeatureDeleteMutation();
     const [ShowEditModel , setShowEditModel] = useState(false);
@@ -17,7 +19,7 @@ export default function Features() {
     const [selectedFeature , setSelectedFeature] = useState(null);
 
    const features = response?.data || [];
-
+    const pagination = response.pagination || {page : 1 , limit , total : 0, totalPages : 1}
     const handleToggleStatus = async (feature) => {
 
         const newStatus = feature.status === "active" ? "inactive" : "active";
@@ -51,6 +53,10 @@ export default function Features() {
         try {
             await FeatureDelete(featureId).unwrap();
             toast.success("Feature deleted successfully");
+
+            if(features.length === 1 && page > 1){
+                setPage((p) => p - 1);
+            }
         }catch(err){
             toast.error("Something went wrong")
         }
@@ -167,6 +173,37 @@ export default function Features() {
                         </tbody>
                     </table>
                 </div>
+               
+                {pagination.totalPages > 1 && (
+
+                    <div className="feat-pagination">
+
+                        <button
+                            className="feat-icon-btn"
+                            onClick={() => setPage((p) => Math.max(p - 1, 1))}
+                            disabled={page <= 1}
+                        >
+                            <ChevronLeft size={16} />
+                        </button>
+
+                        <span>
+                            Page {pagination.page} of {pagination.totalPages}
+                        </span>
+
+                        <button
+                            className="feat-icon-btn"
+                            onClick={() =>
+                                setPage((p) => Math.min(p + 1, pagination.totalPages))
+                            }
+                            disabled={page >= pagination.totalPages}
+                        >
+                            <ChevronRight size={16} />
+                        </button>
+
+                    </div>
+
+                )}
+
             </div>
             {ShowEditModel && (
                 <EditFeatureModal

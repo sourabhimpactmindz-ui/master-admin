@@ -3,9 +3,10 @@ import { baseApi } from "./baseapi";
 export const getFeatures = baseApi.injectEndpoints({
     endpoints : (builder) => ({
         getFeature : builder.query({
-            query : () => ({
+            query : ({page = 1 , limit = 6}) => ({
                 url : "/feature/features",
                 method : "GET",
+                params : {page , limit}
             }),
             providesTags : ["Feature","ProjectFeatures"]
         }),
