@@ -25,19 +25,7 @@ export default function Features() {
         const newStatus = feature.status === "active" ? "inactive" : "active";
         try {
             await featureStatus({ featureId: feature._id, status: newStatus }).unwrap()
-            // setFeatures((prev) =>
-            //     prev.map((f) =>
-            //         f._id === feature._id
-            //             ? {
-            //                 ...f,
-            //                 status:
-            //                     f.status === "active"
-            //                         ? "inactive"
-            //                         : "active",
-            //             }
-            //             : f
-            //     )
-            // );
+           
             toast.success("Status updated successfully")
         } catch (err) {
             toast.error("Something went wrong")
